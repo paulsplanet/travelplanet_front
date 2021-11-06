@@ -30,7 +30,7 @@ function LandingPage() {
     }, [])
 
     const getProducts = (body) => {
-        axios.post('/api/product/products', body)
+        axios.post('https://travelplanetserver.herokuapp.com/api/product/products', body)
                 .then(response => {
                     if(response.data.success) {
                         if (body.loadMore) {
@@ -62,7 +62,7 @@ function LandingPage() {
         return (
             <Col lg={6} md={8} xs={24} key={index}>
                 <Card  
-                    cover={<a href={`/product/${product._id}`}><ImageSlider images={product.images} /></a>}    
+                    cover={<a href={`https://travelplanetserver.herokuapp.com/product/${product._id}`}><ImageSlider images={product.images} /></a>}    
                 >
                     <Meta title={product.title} description={`$${product.price}`} />
                 </Card>

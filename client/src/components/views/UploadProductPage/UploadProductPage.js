@@ -62,7 +62,7 @@ function UploadProductPage(props) {
             images: image,
         }
 
-        Axios.post("/api/product", body)
+        Axios.post("https://travelplanetserver.herokuapp.com/api/product", body)
             .then(response => {
                 if(response.data.success) {
                     alert("We uploaded your data successfully.")

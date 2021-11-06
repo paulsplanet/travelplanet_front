@@ -13,7 +13,7 @@ function FileUpload (props) {
         }
         formData.append("file", files[0]);
 
-        axios.post('/api/product/image', formData, config)
+        axios.post('https://travelplanetserver.herokuapp.com/api/product/image', formData, config)
             .then(response => {
                 if(response.data.success) {
                     // console.log(response.data)
@@ -49,7 +49,7 @@ function FileUpload (props) {
                 {images.map((image, index) => (
                     <div onClick={() => deleteHandler(image)} key={index}>
                         <img style={{ minWidth: '300px', width: '300px', height: '200px' }} 
-                            src={`http://localhost:5000/${image}`}
+                            src={`https://travelplanetserver.herokuapp.com/${image}`}
                         />
                     </div>
                 ))}
